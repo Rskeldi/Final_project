@@ -120,7 +120,7 @@ EMAIL_PORT = 587
 
 DJOSER = {
     'PASSWORD_RESET_CONFIRM_URL':
-        'password_reset/{uid}/{token}',
+        'api/v1/account/password_reset/{uid}/{token}',
     'USERNAME_RESET_CONFIRM_URL':
         'EmailChange/{uid}/{token}',
     'ACTIVATION_URL': 'api/v1/account/activate/{uid}/{token}',

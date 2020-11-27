@@ -56,5 +56,3 @@ class User(AbstractEmailUser):
 
     def __str__(self):
         return f'{self.fullname} - {self.email}'
-
-
