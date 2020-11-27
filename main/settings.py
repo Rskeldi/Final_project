@@ -27,6 +27,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'djoser',
     'apps.users',
+    'apps.category',
+
 ]
 
 MIDDLEWARE = [
@@ -121,8 +123,6 @@ EMAIL_PORT = 587
 DJOSER = {
     'PASSWORD_RESET_CONFIRM_URL':
         'api/v1/account/password_reset/{uid}/{token}',
-    'USERNAME_RESET_CONFIRM_URL':
-        'EmailChange/{uid}/{token}',
     'ACTIVATION_URL': 'api/v1/account/activate/{uid}/{token}',
     'SEND_ACTIVATION_EMAIL': True,
     'USER_CREATE_PASSWORD_RETYPE': True,
