@@ -26,7 +26,7 @@ class Book(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     quantity = models.IntegerField()
     price = models.DecimalField(decimal_places=2, max_digits=10)
-    opinion = models.IntegerField(null=True, blank=True, validators=[
+    rating = models.IntegerField(null=True, blank=True, validators=[
                                              MaxValueValidator(5),
                                              MinValueValidator(1)])
 
