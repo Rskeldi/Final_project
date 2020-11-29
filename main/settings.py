@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'apps.users',
     'apps.category',
     'apps.books',
+    'apps.buying',
 
 ]
 
