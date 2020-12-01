@@ -1,6 +1,6 @@
 from django.urls import path, include
 
-from .views import UserActivationView, UserPasswordReset
+from .views import UserActivationView, UserPasswordReset, PublisherListView
 
 urlpatterns = [
     path('', include('djoser.urls')),
@@ -9,4 +9,6 @@ urlpatterns = [
          UserActivationView.as_view()),
     path('password_reset/<str:uidb64>/<str:token>/',
          UserPasswordReset.as_view()),
+    path('publishers/', PublisherListView.as_view()),
+
 ]

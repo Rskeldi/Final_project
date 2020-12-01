@@ -9,7 +9,8 @@ User = get_user_model()
 class Order(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    total_price = models.DecimalField(decimal_places=2, max_digits=10)
+    total_price = models.DecimalField(decimal_places=2, max_digits=10,
+                                      null=True)
 
 
 class Ordered(models.Model):
@@ -17,6 +18,7 @@ class Ordered(models.Model):
     quantity = models.IntegerField()
     order = models.ForeignKey(Order, on_delete=models.CASCADE,
                               related_name='ordered', blank=True, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.id}'

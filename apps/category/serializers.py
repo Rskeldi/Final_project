@@ -17,3 +17,11 @@ class CategoryAPISerializer(serializers.ModelSerializer):
                 instance.children.all(), many=True
             ).data
         return representation
+
+
+class CategoryBookSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = (
+            'id', 'title',
+        )

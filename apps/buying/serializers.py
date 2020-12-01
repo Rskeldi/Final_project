@@ -13,7 +13,7 @@ class OrderCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Order
         fields = (
-            'user', 'total_price', 'ordered'
+            'user', 'ordered', 'total_price'
         )
 
 
@@ -23,5 +23,5 @@ class OrderDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Order
         fields = (
-            'user', 'total_price', 'ordered'
+            'user', 'total_price', 'ordered', 'created_at'
         )

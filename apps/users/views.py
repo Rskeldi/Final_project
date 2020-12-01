@@ -2,8 +2,9 @@ import requests
 from django.contrib.auth import get_user_model
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.generics import ListAPIView
 
-from .serializer import PasswordResetSerializer
+from .serializer import PasswordResetSerializer, UserSerializer
 
 User = get_user_model()
 
@@ -36,3 +37,8 @@ class UserPasswordReset(APIView):
                      're_new_password': password_confirmation}
         result = requests.post(post_url, data=post_data)
         return Response(result)
+
+
+class PublisherListView(ListAPIView):
+    queryset = User.objects.filter(is_publisher=True)
+    serializer_class = UserSerializer
